@@ -16,8 +16,8 @@ export class SavePointGameComponent implements OnInit {
   // TODO: Get the game data from the API
   baseUrl = 'https://api.igdb.com/v4/games';
 
-  searchGame(term: string): Observable<Game>[] {
-    console.log('Searching for game...');
-    return this.httpClient.get<Game[]>(`${this.baseUrl}?search=${term}`);
-  }
+  // searchGame(term: string): Observable<Game>[] {
+  //   console.log('Searching for game...');
+  //   return this.httpClient.get<Game[]>(`${this.baseUrl}?search=${term}`);
+  // }
 }

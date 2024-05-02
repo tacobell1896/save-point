@@ -1,0 +1,14 @@
+.notes button.selected {
+  background-color: black;
+  color: white;
+}
+
+.notes button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.notes button.selected:active {
+  background-color: black;
+  color: white;
+}
