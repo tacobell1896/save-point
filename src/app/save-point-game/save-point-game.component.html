@@ -1,7 +1,14 @@
-<mat-card>
-    <mat-form-field>
-        <input matInput type="search" placeholder="Game Name" #search />
-    </mat-form-field>
-    <button mat-button (click)="searchGame(search.value)">Search</button>
-    <mat-card-title>Game</mat-card-title>
+<mat-form-field>
+    <input matInput type="search" placeholder="Game Name" #search />
+</mat-form-field>
+<button mat-button (click)="searchGame(search.value)">Search</button>
+<mat-card-title>Games</mat-card-title>
+<mat-card *ngFor="let game of games">
+    <mat-card-header>
+        <mat-card-title>{{game.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>{{game.summary}}</p>
+    </mat-card-content>
+    <button mat-button>+ Add</button>
 </mat-card>

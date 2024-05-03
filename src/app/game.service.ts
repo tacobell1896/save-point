@@ -28,7 +28,7 @@ export class GameService {
   // TODO: Get the game data from the API: https://api.igdb.com/ for more details
   baseUrl = "https://api.igdb.com/v4/games";
 
-  /* async searchGame(term: string): Promise<Observable<Game[]>> {
+  async searchGame(term: string): Promise<Observable<Game[]>> {
     // Fix: Change the return type to Observable<Game[]>
     console.log("Searching for game...");
     const response = await igdb()
@@ -36,6 +36,6 @@ export class GameService {
       .search(term)
       .request(this.baseUrl);
     console.log(response.data);
-    return of(GAMES);
-  }*/
+    return of(response.data);
+  }
 }
