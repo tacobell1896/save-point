@@ -14,12 +14,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { SavePointGameComponent } from './save-point-game/save-point-game.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NoteDetailComponent } from './note-detail/note-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SavePointNoteComponent,
-    SavePointGameComponent
+    SavePointGameComponent,
+    NoteDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
