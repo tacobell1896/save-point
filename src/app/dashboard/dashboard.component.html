@@ -1,0 +1,44 @@
+<h2>Welcome to SavePoint!</h2>
+<div>
+    <h2>Games</h2>
+    <a *ngFor="let game of games">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{game.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{game.summary}}</p>
+                <mat-list>
+                  <mat-list-item>
+                    <p>Game Note Goes here</p>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <p>Game Note Goes here</p>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <p>Game Note Goes here</p>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <p>Game Note Goes here</p>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <p>Game Note Goes here</p>
+                  </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </a>
+</div>
+<div>
+    <h2>Notes</h2>
+    <a *ngFor="let note of notes">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{note.id}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{note.note}}</p>
+            </mat-card-content>
+        </mat-card>
+    </a>
+</div>
