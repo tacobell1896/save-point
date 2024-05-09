@@ -11,17 +11,15 @@ export class SavePointGameComponent implements OnInit {
   games: Game[] = [];
   constructor(private gameService: GameService) {}
 
-  ngOnInit(): void {
-    this.getGames();
-  }
-
-  getGames(): void {
-    this.gameService.getGames().subscribe((games) => (this.games = games));
-  }
-
-  searchGame(term: string): void {
+  async searchGame(term: string): Promise<void> {
     console.log(`Searching for ${term}...`);
+    (await this.gameService.searchGame(term)).subscribe((games) => (this.games = games));
+    console.log(this.games);
     // TODO: Implement the searchGame method in GameService
     // this.gameService.searchGame(term).then((games) => (this.games = games));
+  }
+
+  ngOnInit(): void {
+    // Add your initialization logic here
   }
 }
