@@ -1,7 +1,7 @@
 import { Observable, of } from "rxjs";
 import { Injectable } from "@angular/core";
 import { Note } from "./note";
-import { NOTES } from "./mock-notes";
+// import { NOTES } from "./mock-notes";
 import { MessageService } from "./message.service";
 import { HttpClient } from "@angular/common/http";
 
@@ -20,7 +20,7 @@ export class NoteService {
 
   //TODO: Get the note data from the SavePoint API
   getNotes(): Observable<Note[]> {
-    const notes = of(NOTES);
+    const notes = this.httpClient.get<Note[]>("http://localhost:8080/api/savepointnotes");
     this.messageService.add("NoteService: fetched notes");
     return notes;
   }

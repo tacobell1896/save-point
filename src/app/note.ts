@@ -1,5 +1,6 @@
 export interface Note {
-  id: number;
+  savePointNoteId: number;
   note: string;
-  game_name: string;
+  noteDate: string;
+  savePointGameId: number;
 }

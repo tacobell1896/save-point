@@ -1,6 +1,6 @@
 <mat-card *ngFor="let note of notes">
     <mat-card-header>
-        <mat-card-title>Note ID: {{note.id}}</mat-card-title>
+        <mat-card-title>Note ID: {{note.savePointNoteId}}</mat-card-title>
         <button [class.selected]="note === selectedNote" mat-raised-button (click)="onSelect(note)">View Note</button>
     </mat-card-header>
 </mat-card>

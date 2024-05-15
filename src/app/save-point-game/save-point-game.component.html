@@ -5,10 +5,10 @@
 <mat-card-title>Games</mat-card-title>
 <mat-card *ngFor="let game of games">
     <mat-card-header>
-        <mat-card-title>{{game.name}}</mat-card-title>
+        <mat-card-title>{{game.gameName}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <p>{{game.summary}}</p>
+        <p>{{game.gameDescription}}</p>
     </mat-card-content>
     <button mat-button>+ Add</button>
 </mat-card>

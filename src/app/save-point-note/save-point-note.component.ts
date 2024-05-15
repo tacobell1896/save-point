@@ -21,7 +21,7 @@ export class SavePointNoteComponent implements OnInit {
   selectedNote?: Note;
   onSelect(note: Note): void {
     this.selectedNote = note;
-    this.messageService.add(`NotesComponent: Selected note id=${note.id}`)
+    this.messageService.add(`NotesComponent: Selected note id=${note.savePointNoteId}`)
   }
 
   getNotes(): void {

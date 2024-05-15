@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Game } from "../game";
 import { GameService } from "../game.service";
+import { get } from "http";
 
 @Component({
   selector: "app-save-point-game",
@@ -19,7 +20,12 @@ export class SavePointGameComponent implements OnInit {
     // this.gameService.searchGame(term).then((games) => (this.games = games));
   }
 
+  getGames(): void {
+    this.gameService.getGames().subscribe((games) => (this.games = games));
+  }
+
   ngOnInit(): void {
     // Add your initialization logic here
+    this.getGames();
   }
 }
