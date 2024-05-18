@@ -1,0 +1,14 @@
+<mat-card *ngIf="note">
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label> Note: </mat-label>
+      <textarea matInput id="note" [(ngModel)]="note.note" placeholder="What are your thoughts..."></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Game: </mat-label>
+      <input matInput id="game" [(ngModel)]="note.savePointGameId" placeholder="Game Name">
+    </mat-form-field>
+    <button mat-raised-button (click)="save()">Save</button>
+    <button mat-raised-button (click)="delete()">Delete</button>
+  </mat-card-content>
+</mat-card>

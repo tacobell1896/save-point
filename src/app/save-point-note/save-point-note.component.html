@@ -1,16 +1,18 @@
-<mat-card-header>
-    <mat-card-title>Notes</mat-card-title>
-    <mat-card-subtitle>Save Point Notes</mat-card-subtitle>
-</mat-card-header>
-<mat-card-content>
-            <h4 mat-line>NOTE PLACEHOLDER</h4>
-            <button mat-icon-button (click)="delete()" name="delete">
-                Delete
-            </button>
-<button (click)="addNote()">Add Note</button>
-<mat-form-field>
-    <mat-label>Note</mat-label>
-    <textarea matInput name="note"></textarea>
-</mat-form-field>
-<button (click)="save()">Save</button>
-</mat-card-content>
+<mat-card>
+  <mat-form-field>
+      <mat-label> Note: </mat-label>
+      <textarea matInput id="new-note" #noteNote placeholder="What are your thoughts..."></textarea>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label> Game: </mat-label>
+      <textarea matInput id="new-game" #noteGame placeholder="What game ID are you playing?"></textarea>
+  </mat-form-field>
+  <button mat-raised-button (click)="addNote(noteNote.value, noteGame.value)">Save</button>
+</mat-card>
+<mat-card *ngFor="let note of notes">
+    <mat-card-header>
+        <mat-card-title>Note ID: {{note.savePointNoteId}}</mat-card-title>
+        <button [class.selected]="note === selectedNote" mat-raised-button (click)="onSelect(note)">View Note</button>
+    </mat-card-header>
+</mat-card>
+<app-note-detail *ngIf="selectedNote" [note]="selectedNote"></app-note-detail>

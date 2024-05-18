@@ -1,23 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from "@angular/core";
+import { Game } from "../game";
+import { GameService } from "../game.service";
+import { get } from "http";
 
 @Component({
-  selector: 'app-save-point-game',
-  templateUrl: './save-point-game.component.html',
-  styleUrls: ['./save-point-game.component.css']
+  selector: "app-save-point-game",
+  templateUrl: "./save-point-game.component.html",
+  styleUrls: ["./save-point-game.component.css"],
 })
 export class SavePointGameComponent implements OnInit {
+  games: Game[] = [];
+  constructor(private gameService: GameService) {}
 
-  constructor() { }
+  async searchGame(term: string): Promise<void> {
+    console.log(`Searching for ${term}...`);
+    (await this.gameService.searchGame(term)).subscribe((games) => (this.games = games));
+    console.log(this.games);
+    // TODO: Implement the searchGame method in GameService
+    // this.gameService.searchGame(term).then((games) => (this.games = games));
+  }
+
+  getGames(): void {
+    this.gameService.getGames().subscribe((games) => (this.games = games));
+  }
 
   ngOnInit(): void {
-  }
-  // TODO: Get the game data from the API
-  baseUrl = 'https://api.igdb.com/v4/games';
-
-  searchGame(term: string): Observable<Game>[] {
-    console.log('Searching for game...');
-    return this.httpClient.get<Game[]>(`${this.baseUrl}?search=${term}`);
+    // Add your initialization logic here
+    this.getGames();
   }
 }

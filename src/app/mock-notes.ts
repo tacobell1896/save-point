@@ -1,0 +1,25 @@
+import { Note } from './note';
+
+export const NOTES: Note[] = [
+  { id: 2, note: 'Test Note number 2', game_name: 'Alan Wake'},
+  { id: 3, note: 'Test Note number 3', game_name: 'Super Mario Bros'},
+  { id: 4, note: 'Test Note number 4', game_name: 'The Legend of Zelda'},
+  { id: 5, note: 'Test Note number 5', game_name: 'Final Fantasy VII'},
+  { id: 6, note: 'Test Note number 6', game_name: 'Minecraft'},
+  { id: 7, note: 'Test Note number 7', game_name: 'Grand Theft Auto V'},
+  { id: 8, note: 'Test Note number 8', game_name: 'Overwatch'},
+  { id: 9, note: 'Test Note number 9', game_name: 'Fortnite'},
+  { id: 10, note: 'Test Note number 10', game_name: 'Call of Duty: Warzone'},
+  { id: 11, note: 'Test Note number 11', game_name: 'Assassin\'s Creed Valhalla'},
+  { id: 12, note: 'Test Note number 12', game_name: 'Pokémon Sword and Shield'},
+  { id: 13, note: 'Test Note number 13', game_name: 'Cyberpunk 2077'},
+  { id: 14, note: 'Test Note number 14', game_name: 'The Witcher 3: Wild Hunt'},
+  { id: 15, note: 'Test Note number 15', game_name: 'Red Dead Redemption 2'},
+  { id: 16, note: 'Test Note number 16', game_name: 'Halo: Combat Evolved'},
+  { id: 17, note: 'Test Note number 17', game_name: 'Mass Effect Trilogy'},
+  { id: 18, note: 'Test Note number 18', game_name: 'The Last of Us Part II'},
+  { id: 19, note: 'Test Note number 19', game_name: 'Bioshock'},
+  { id: 20, note: 'Test Note number 20', game_name: 'Fallout 4'},
+  { id: 21, note: 'Test Note number 21', game_name: 'Uncharted 4: A Thief\'s End'},
+  { id: 22, note: 'Test Note number 22', game_name: 'God of War'},
+];
