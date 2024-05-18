@@ -7,7 +7,7 @@
       <mat-label> Game: </mat-label>
       <textarea matInput id="new-game" #noteGame placeholder="What game ID are you playing?"></textarea>
   </mat-form-field>
-  <button mat-raised-button (click)="addNote()">Save</button>
+  <button mat-raised-button (click)="addNote(noteNote.value, noteGame.value)">Save</button>
 </mat-card>
 <mat-card *ngFor="let note of notes">
     <mat-card-header>

@@ -29,7 +29,23 @@ export class SavePointNoteComponent implements OnInit {
       .subscribe(notes => this.notes = notes);
   }
 
-  addNote() {
+  addNote(note: string, savePointGameId: string) {
+    // convert the game id to a number
+    const gameId = Number(savePointGameId);
+
+    // create a new note object
+    const newNote: Note = {
+      savePointNoteId: 0, // replace 0 with the appropriate value
+      // TODO: Replace the placeholder values with the appropriate values
+      noteDate: '2024-05-18',
+      note,
+      savePointGameId: gameId
+    };
+
+    console.log(newNote);
+
+    // push the new note to the API
+    this.noteService.addNote(newNote).subscribe(note => this.notes.push(note));
     // this.noteService.addNote(note).subscribe(note => this.notes.push(note));
     console.log("Note Added!");
   }
