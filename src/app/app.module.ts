@@ -18,6 +18,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { NoteDetailComponent } from "./note-detail/note-detail.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { GameDetailComponent } from './game-detail/game-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
     NoteDetailComponent,
     MessagesComponent,
     DashboardComponent,
+    GameDetailComponent,
   ],
   imports: [
     BrowserModule,

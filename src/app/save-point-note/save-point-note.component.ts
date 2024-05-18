@@ -30,13 +30,17 @@ export class SavePointNoteComponent implements OnInit {
   }
 
   addNote() {
+    // this.noteService.addNote(note).subscribe(note => this.notes.push(note));
+    console.log("Note Added!");
   }
 
   save() {
 
+    console.log("Note Saved!");
   }
 
   delete() {
+    console.log("Note Deleted!");
   }
 
 }
