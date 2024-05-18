@@ -43,7 +43,7 @@ import { GameDetailComponent } from './game-detail/game-detail.component';
     MatButtonModule,
     MatListModule,
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
