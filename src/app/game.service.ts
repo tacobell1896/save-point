@@ -5,6 +5,7 @@ import { Game } from "./game";
 // import { GAMES } from "./mock-games";
 import { MessageService } from "./message.service";
 import igdb from "igdb-api-node";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -29,17 +30,29 @@ export class GameService {
   }
   // TODO: Get the game data from the API: https://api.igdb.com/ for more details
   // baseUrl = 'https://sf26c3krjh.execute-api.us-west-2.amazonaws.com/production/v4/games';
-  baseUrl = 'http://localhost:8080/api/savepointgames';
+  baseUrl = environment.baseUrl + 'savepointgames/';
 
-  async searchGame(term: string): Promise<Observable<Game[]>> {
-    // Fix: Change the return type to Observable<Game[]>
-    console.log('Searching for game...');
-    // TODO: Fix CORS issue by using the IGDB API
-    const response = await this.client
-      .fields(['name', 'cover'])
-      .search(term)
-      .request(this.baseUrl);
-    console.log(response.data);
-    return of(response.data);
+  addGame(game: Game): Observable<Game> {
+    return this.http.post<Game>(this.baseUrl, game);
   }
+
+  saveGame(game: Game): Observable<Game> {
+    return this.http.put<Game>(this.baseUrl + game.savePointGameId, game);
+  }
+
+  deleteGame(game: Game): Observable<Game> {
+    return this.http.delete<Game>(this.baseUrl + game.savePointGameId);
+  }
+
+  // async searchGame(term: string): Promise<Observable<Game[]>> {
+    // // Fix: Change the return type to Observable<Game[]>
+    // console.log('Searching for game...');
+    // // TODO: Fix CORS issue by using the IGDB API
+    // const response = await this.client
+      // .fields(['name', 'cover'])
+      // .search(term)
+      // .request(this.baseUrl);
+    // console.log(response.data);
+    // return of(response.data);
+  // }
 }

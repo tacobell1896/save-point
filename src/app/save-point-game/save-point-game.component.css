@@ -1,0 +1,14 @@
+.games button.selected {
+  background-color: black;
+  color: white;
+}
+
+.games button.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+
+.games button.selected:active {
+  background-color: black;
+  color: white;
+}
