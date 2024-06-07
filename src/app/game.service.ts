@@ -12,10 +12,6 @@ import { environment } from "src/environments/environment";
 })
 export class GameService {
   // TOOD: Add the client id and client secret to a separate file
-  client = igdb(
-    '5xhac97vb3xj2bv16snpe2esd3gsyl',
-    'tgcxmunmpo31adxq83wx52fyfl9lpn'
-  );
   httpClient: HttpClient; // Fix: Properly type the httpClient property
 
   constructor(

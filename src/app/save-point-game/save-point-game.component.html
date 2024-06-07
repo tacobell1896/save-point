@@ -19,7 +19,7 @@
         <mat-card-title>{{game.gameName}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <button [class.selected]="game === selectedGame" mat-raised-button (click)="onSelect(game)">View Game</button>
+        <button [class.selected]="game === selectedGame" mat-raised-button (click)="onSelect(game)">Edit Game</button>
     </mat-card-content>
 </mat-card>
 <app-game-detail *ngIf="selectedGame" [game]="selectedGame"></app-game-detail>

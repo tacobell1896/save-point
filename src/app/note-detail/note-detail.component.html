@@ -6,7 +6,11 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label> Game: </mat-label>
-      <input matInput id="game" [(ngModel)]="note.savePointGameId" placeholder="Game Name">
+      <mat-select [(ngModel)]="note.savePointGameId">
+        <mat-option *ngFor="let game of games" [value]="game.savePointGameId">
+          {{game.gameName}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <button mat-raised-button (click)="save()">Save</button>
     <button mat-raised-button (click)="delete()">Delete</button>
