@@ -1,1 +1,15 @@
-<p>game-detail works!</p>
+<mat-card *ngIf="game">
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label> Game Name: </mat-label>
+      <textarea matInput id="note" [(ngModel)]="game.gameName" placeholder="What are your thoughts..."></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Game: </mat-label>
+      <input matInput id="game" [(ngModel)]="game.gameDescription" placeholder="Game Name">
+    </mat-form-field>
+    <button mat-raised-button (click)="save()">Save</button>
+    <button mat-raised-button (click)="delete()">Delete</button>
+  </mat-card-content>
+</mat-card>
+<!-- TOOD: Display the notes associated with the game -->

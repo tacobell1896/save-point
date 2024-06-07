@@ -3,12 +3,23 @@
 </mat-form-field>
 <button mat-button (click)="searchGame(search.value)">Search</button>
 <mat-card-title>Currently Playing Games</mat-card-title>
+<mat-card>
+  <mat-form-field>
+      <mat-label> Game Name: </mat-label>
+      <textarea matInput id="new-note" #gameName placeholder="What game are you playing..."></textarea>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label> Game Description: </mat-label>
+      <textarea matInput id="new-game" #gameDescription placeholder="Give a brief description of the game!"></textarea>
+  </mat-form-field>
+  <button mat-raised-button (click)="addGame(gameName.value, gameDescription.value); gameName.value=''; gameDescription.value='';">Add</button>
+</mat-card>
 <mat-card *ngFor="let game of games">
     <mat-card-header>
         <mat-card-title>{{game.gameName}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <p>{{game.gameDescription}}</p>
+        <button [class.selected]="game === selectedGame" mat-raised-button (click)="onSelect(game)">Edit Game</button>
     </mat-card-content>
-    <button mat-button>+ Add</button>
 </mat-card>
+<app-game-detail *ngIf="selectedGame" [game]="selectedGame"></app-game-detail>

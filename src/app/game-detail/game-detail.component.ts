@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Game } from '../game';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-game-detail',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() game?: Game;
+  constructor(private gameSevice: GameService) { }
 
   ngOnInit(): void {
+  }
+
+  save(): void {
+    if (this.game) {
+      this.gameSevice.saveGame(this.game)
+        .subscribe(() => console.log("Game saved"));
+    }
+  }
+
+  delete(): void {
+    if (this.game) {
+      this.gameSevice.deleteGame(this.game)
+        .subscribe(() => console.log("Game deleted"));
+    }
   }
 
 }

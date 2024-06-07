@@ -5,13 +5,14 @@ import { Note } from "./note";
 // import { NOTES } from "./mock-notes";
 import { MessageService } from "./message.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: "root",
 })
 export class NoteService {
   httpClient: HttpClient; // Fix: Properly type the httpClient property
-  private notesUrl = "http://localhost:8080/api/savepointnotes"; // Fix: Define the URL to the notes API
+  private notesUrl = environment.baseUrl + "savepointnotes/"; // Fix: Define the URL to the notes API
 
   httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -45,7 +46,7 @@ export class NoteService {
 
   // TODO: Add the ability to delete a note
   delete(note: Note): Observable<Note> {
-    const notes = this.httpClient.delete<Note>(this.notesUrl + "/" + note.savePointNoteId);
+    const notes = this.httpClient.delete<Note>(this.notesUrl + note.savePointNoteId);
     this.messageService.add("NoteService: deleted note");
     return notes;
   }
